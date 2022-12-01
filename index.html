@@ -4,10 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="assets/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/fonts/MonoLisa-Regular.otf" />
     <title>CSS Snippet Cheatsheet</title>
 </head>
 <body>
+    <header>
+        <h1>CSS Snippet Cheatsheet</h1>
+        <p>Ever have trouble recalling the exact syntax for your favourite CSS code? Give it a permanent home and add it to this page! Select any snippet below and it'll automatically select all of the code for you to copy.</p>
+    </header>
 
+    <section id="snippetGrid">
+        <div id="flexboxRow" class="snippetGridArea">
+            <div class="card">
+                <h2>Flexbox Row</h2>
+                <p>Use these three properties to create a Flexbox row layout.</p>
+                <code>.row {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                </code>
+            </div>
+        </div>   
+        <div id="flexboxColumn" class="snippetGridArea">
+            <div class="card">
+                <h2>Flexbox Column</h2>
+                <p>Use these to create a Flexbox column layout.</p>
+                <code>.column {
+                        display: flex;
+                        flex-direction: column;
+                </code>
+            </div>
+        </div>      
+        <div id="cssGridLayout" class="snippetGridArea">
+            <div class="card">
+                <h2>CSS Grid Layout</h2>
+                <p>Build a 12-column layout using CSS Grid</p>
+                <code>.row {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                </code>
+            </div>
+        </div>     
+    </section>
 </body>
 </html>
