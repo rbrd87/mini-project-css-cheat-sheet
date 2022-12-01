@@ -1,0 +1,119 @@
+* {
+    /* sets the box size calculation to include padding/borders */
+    box-sizing: border-box;
+}
+
+:root {
+    /* A list of variable for values used multiple times */
+    --light:#489b8b;
+    --turquoise: #2aefcb;
+    --white:#fff;
+    --grey: #b6b6b6;
+    --background-color: #33393f;
+    --background-gradient: #19413a;
+}
+
+body {
+    /* Set basic font/background for the entire page */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);  
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+header {
+    text-align: center;
+    margin: 0 auto;
+    color: var(--turquoise);
+}
+
+header p {
+    color: var(--white);
+    margin-bottom: 25pxpx;
+}
+
+.card p {
+    color: var(--grey);
+    font-size: 13px;
+}
+
+.card {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px dashed var(--white);
+    padding: 0px 10px 10px 10px;
+    margin: 20px 5px;
+    min-width: 100px;
+    width: 32%;
+}
+
+.card, .card-header{
+    border-radius: 2px;
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover, .card:hover .card-header {
+    box-shadow: 0px 0px 10px var(--turquoise);
+}
+
+.card .card-snippet {
+    flex-grow: 1;
+}
+
+.card-snippet {
+    border-radius:10px;
+    background: linear-gradient(var(--background-gradient),var(--light));
+    color: var(--white);
+    justify-content: center;
+}
+
+.card-header {
+    position: relative;
+    margin: -20px 10px 0px 10px;
+    z-index: 1;
+    color: var(--white);
+    background-color: var(--background-color);
+    border: 1px solid var(--turquoise);
+    border-radius: 4px;
+    padding: 5px 0px 5px 10px;
+}
+
+.card-snippet pre {
+    padding: 0 10px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    overflow: auto;
+}
+
+.card-snippet pre:hover {
+    user-select:all;
+}
+
+footer {
+    text-align: center;
+    color: var(--light);
+    padding: 10px;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 992px) {
+    .card {
+        width: 48%;
+        justify-content: space-between;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .card {
+      width: 98%
+    }
+  }
