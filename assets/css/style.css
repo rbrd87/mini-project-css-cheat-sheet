@@ -1,10 +1,10 @@
+/* Sets the box size calculation to include padding/borders */
 * {
-    /* sets the box size calculation to include padding/borders */
     box-sizing: border-box;
 }
 
+/* A list of variable for values repeadted several times */
 :root {
-    /* A list of variable for values used multiple times */
     --light:#489b8b;
     --turquoise: #2aefcb;
     --white:#fff;
@@ -13,19 +13,13 @@
     --background-gradient: #19413a;
 }
 
+/* Set basic font/background for the entire page */
 body {
-    /* Set basic font/background for the entire page */
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--background-color);  
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
+/* Header Section */
 header {
     text-align: center;
     margin: 0 auto;
@@ -41,12 +35,15 @@ header p {
     margin: 20px 30px 30px 30px;
 }
 
-.card p {
-    color: var(--grey);
-    font-size: 13px;
-    margin-left: 5px;
+/* Main Content Section */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
+/* Card Styling - Dashed border around the edge */
 .card {
     display:flex;
     flex-direction: column;
@@ -59,26 +56,14 @@ header p {
     width: 32%;
 }
 
-.card, .card-header{
-    border-radius: 2px;
-    transition: all 0.5s ease-in-out;
+/* Changed the colour, size and alignment of the <p> tag in the card section */
+.card p {
+    color: var(--grey);
+    font-size: 13px;
+    text-align: center;
 }
 
-.card:hover, .card:hover .card-header {
-    box-shadow: 0px 0px 10px var(--turquoise);
-}
-
-.card .card-snippet {
-    flex-grow: 1;
-}
-
-.card-snippet {
-    border-radius:10px;
-    background: linear-gradient(var(--background-gradient),var(--light));
-    color: var(--white);
-    justify-content: center;
-}
-
+/* Styling for the header of the card, making the position sit on the card border */
 .card-header {
     position: relative;
     margin: -20px 10px 0px 10px;
@@ -86,12 +71,33 @@ header p {
     color: var(--white);
     background-color: var(--background-color);
     border: 1px solid var(--turquoise);
-    border-radius: 4px;
-    padding: 8px 0px 8px 13px;
+    border-radius: 6px;
+    padding: 8px 10px 8px 10px;
     font-size: 1.6rem;
+    text-align: center;
 }
 
-.card-snippet pre {
+/* Added a transition effect when the cards/card-header loads */
+.card, .card-header{
+    transition: all 0.5s ease-in-out;
+}
+
+/* Box shadow for when the user hovers over the card/card-header */
+.card:hover, .card:hover .card-header {
+    box-shadow: 0px 0px 10px var(--turquoise);
+}
+
+/* Styling for section that holds the code - added a gradient background and centered the content */
+.code-snippet {
+    border-radius: 10px;
+    background: linear-gradient(var(--background-gradient),var(--light));
+    color: var(--white);
+    justify-content: center;
+    border: 1px solid #489b8b;
+}
+
+/* Ensuring the code has the correct styling such as line-height/how the white-space is handled */
+.code-snippet pre {
     padding: 0 10px;
     white-space: pre-wrap;
     line-height: 1.5;
@@ -99,10 +105,17 @@ header p {
     border-radius: 8px;
 }
 
-.card-snippet pre:hover {
+/* When the user selects the code it highlights it all */
+.code-snippet pre:hover {
     user-select:all;
 }
 
+/* Selects the last child to grow to full width if it has space to grow */
+.card .code-snippet {
+    flex-grow: 1;
+}
+
+/* Footer Section */
 footer {
     text-align: center;
     color: var(--light);
@@ -113,6 +126,7 @@ footer h3 {
     font-size: 1.5rem;
 }
 
+/* Media Queries for responsive styling */
 @media screen and (max-width: 992px) {
     .card {
         width: 48%;
